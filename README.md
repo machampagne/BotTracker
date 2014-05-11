@@ -1,4 +1,4 @@
-# Piwik BotTracker Plugin 
+# Piwik BotTracker Plugin (forked)
 
 ## Description
 
@@ -12,8 +12,10 @@ Many webcrawler, spiders and bots don't load the images in a page and most of th
 
 
 Additional info:
-I wrote BotTracker for my own needs but people ask me to make it public - so I put it online.
-It's free to use and I will support it as long as I can spend the time. But I will *not* activate a donation button. If someone is paying money, I feel like I have to support him. 
+I forked BotTracker Original Project for my own needs - so I put it online.
+It's free to use and I will support it as long as I can spend the time.
+I can provide paid support if you expect a rushed fix or mod.
+
 I want to work on this plugin because I want to and not because I have to. I hope you can unterstand that.
 
 ## Installation / Update
@@ -46,26 +48,11 @@ The "extra Stats"-Feature is in "early developing". You can collect the data abo
 
 
 ## Changelog
-__0.46__
-* bugfix: remove depricated method for Piwik v2.2
-
-__0.45__
-* add column to primary key in extra-stats-table
-
-__0.44__
-* more description for the marketplace
-
-__0.43__
-* Compatible with Piwik 2.0
+__0.0.1__
+* Added few thousands bots, spider & validators
 
 ## License
 
 GPL v3 / fair use
 
-## Support
-
-Please direct any feedback to: 
-
-* [https://github.com/Thomas--F/BotTracker/issues](https://github.com/Thomas--F/BotTracker/issues)
-* [http://dev.piwik.org/trac/ticket/2391](http://dev.piwik.org/trac/ticket/2391)
 
