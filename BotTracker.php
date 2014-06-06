@@ -59,7 +59,7 @@ class BotTracker extends \Piwik\Plugin
 			$tableExists = true;
 		}
 		
-		if (!$tableExists){		
+		if (!$tableExists){	
 			$sites = APISitesManager::getInstance()->getSitesWithAdminAccess();
 			foreach ($sites as $site){
 				$params3 = 				$params3 = array_fill(0, 1380, $site['idsite']);
