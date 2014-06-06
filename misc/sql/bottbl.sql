@@ -8,15 +8,4 @@ CREATE TABLE IF NOT EXISTS `'.Common::prefixTable('bot_db').'`
   `botLastVisit` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
   `extra_stats` BOOLEAN NOT NULL DEFAULT FALSE,
    PRIMARY KEY(`botId`)
-)  DEFAULT CHARSET=utf8;
-
-
-CREATE TABLE IF NOT EXISTS `'.Common::prefixTable('bot_db_stat').'`
-(			 			`botId` INTEGER(10) UNSIGNED NOT NULL,
-			 			`idsite` INTEGER(10) UNSIGNED NOT NULL,
-			 			`page` VARCHAR(100) NOT NULL,
-			 			`visit_timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-			 			`useragent` VARCHAR(100) NOT NULL,
-			 
-			 			PRIMARY KEY(`botId`,`visit_timestamp`)
-)  DEFAULT CHARSET=utf8;
+)  DEFAULT CHARSET=utf8

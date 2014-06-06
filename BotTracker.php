@@ -40,6 +40,7 @@ class BotTracker extends \Piwik\Plugin
 			
 		// create new table "botDB"
 		$query = file_get_contents('misc/sql/bottbl.sql');
+		$query1 = file_get_contents('misc/sql/bottbl2.sql');
 		
 		// if the table already exist do not throw error. Could be installed twice...
 		try {
@@ -48,6 +49,8 @@ class BotTracker extends \Piwik\Plugin
 		catch(\Exception $e){
 			$tableExists = true;
 		}
+
+		Db::query($query1);
 		
 		if (!$tableExists){		
 			$sites = APISitesManager::getInstance()->getSitesWithAdminAccess();
