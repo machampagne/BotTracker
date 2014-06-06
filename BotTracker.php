@@ -39,17 +39,7 @@ class BotTracker extends \Piwik\Plugin
 		$tableExists = false;
 			
 		// create new table "botDB"
-		$query = "CREATE TABLE `".Common::prefixTable('bot_db')."` 
- (`botId` INTEGER(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `idsite` INTEGER(10) UNSIGNED NOT NULL,
-  `botName` VARCHAR(100) NOT NULL,
-  `botActive` BOOLEAN NOT NULL,
-  `botKeyword` VARCHAR(128) NOT NULL,
-  `botCount` INTEGER(10) UNSIGNED NOT NULL,
-  `botLastVisit` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `extra_stats` BOOLEAN NOT NULL DEFAULT FALSE,
-  PRIMARY KEY(`botId`)
-)  DEFAULT CHARSET=utf8";
+		$query = file_get_contents('misc/sql/bottbl.sql');
 		
 		// if the table already exist do not throw error. Could be installed twice...
 		try {
@@ -63,22 +53,10 @@ class BotTracker extends \Piwik\Plugin
 			$sites = APISitesManager::getInstance()->getSitesWithAdminAccess();
 			foreach ($sites as $site){
 				$params3 = array_fill(0, 1380, $site['idsite']);
-				$query3 = file_get_contents('misc/sql/.sql');		     
+				$query3 = file_get_contents('misc/sql/bots.sql');		     
 				Db::query($query3,$params3);
 			}
 		}
-		// Create extendet_stats_table
-		$query4 =  'CREATE TABLE IF NOT EXISTS `'.Common::prefixTable('bot_db_stat').'`
-(
-			 			`botId` INTEGER(10) UNSIGNED NOT NULL,
-			 			`idsite` INTEGER(10) UNSIGNED NOT NULL,
-			 			`page` VARCHAR(100) NOT NULL,
-			 			`visit_timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-			 			`useragent` VARCHAR(100) NOT NULL,
-			 
-			 			PRIMARY KEY(`botId`,`visit_timestamp`)
-)  DEFAULT CHARSET=utf8';
-		Db::query($query4);
 	}
 	
 	public function uninstall()
