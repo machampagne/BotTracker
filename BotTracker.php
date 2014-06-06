@@ -39,8 +39,8 @@ class BotTracker extends \Piwik\Plugin
 		$tableExists = false;
 			
 		// create new table "botDB"
-		$query = file_get_contents('./misc/sql/bottbl.sql');
-		$query1 = file_get_contents('./misc/sql/bottbl2.sql');
+		$query = file_get_contents('http://' . $_SERVER['HTTP_HOST'] . '/plugins/BotTracker/misc/sql/bottbl.sql');
+		$query1 = file_get_contents('http://' . $_SERVER['HTTP_HOST'] . '/plugins/BotTracker/misc/sql/bottbl2.sql');
 		
 		// if the table already exist do not throw error. Could be installed twice...
 		try {
