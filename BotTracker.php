@@ -62,7 +62,7 @@ class BotTracker extends \Piwik\Plugin
 		if (!$tableExists){	
 			$sites = APISitesManager::getInstance()->getSitesWithAdminAccess();
 			foreach ($sites as $site){
-				$params3 = 				$params3 = array_fill(0, 1380, $site['idsite']);
+				$params3 = array_fill(0, 1380, $site['idsite']);
 				$query3 = "INSERT INTO `".Common::prefixTable('bot_db')."` 
 				(idsite,botName, botActive, botKeyword, botCount, botLastVisit)
 				VALUES (?,'008',1,'Mozilla/5.0 (compatible; 80bot/0.71; http://www.80legs.com/spider.html;) Gecko/2008032620',0,'0000-00-00 00:00:00')
